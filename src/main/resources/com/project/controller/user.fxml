@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.DisplacementMap?>
+<?import javafx.scene.effect.FloatMap?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="865.0" style="-fx-background-color: #e7e7e7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.ControllerUser">
+   <children>
+      <Pane layoutY="58.0" prefHeight="52.0" prefWidth="865.0" style="-fx-background-color: #ff751a;">
+         <children>
+            <Button fx:id="showDrugsUser" layoutX="21.0" layoutY="9.0" mnemonicParsing="false" onAction="#showDrugs" prefHeight="34.0" prefWidth="121.0" style="-fx-background-color: #006bb4; -fx-text-fill: #ffffff; -fx-font-weight: bold;" text="Show Drugs">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+               <effect>
+                  <DisplacementMap>
+                     <mapData>
+                        <FloatMap />
+                     </mapData>
+                  </DisplacementMap>
+               </effect>
+               <padding>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </padding>
+            </Button>
+            <ToolBar layoutX="392.0" layoutY="6.0" prefHeight="40.0" prefWidth="302.0" style="-fx-background-color: #006bb4;">
+               <items>
+                  <TextField fx:id="searchDrug" prefHeight="26.0" prefWidth="250.0" promptText="Search Drug" />
+                  <ImageView fx:id="searchDrugBtn" fitHeight="27.0" fitWidth="28.0" onMouseClicked="#showDrugsSearched" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@search.png" />
+                     </image>
+                  </ImageView>
+               </items>
+            </ToolBar>
+         </children>
+      </Pane>
+      <TableView fx:id="drugsUserTable" layoutX="14.0" layoutY="129.0" prefHeight="382.0" prefWidth="450.0" style="-fx-border-width: 0.8px; -fx-border-color: #ff751a;">
+        <columns>
+          <TableColumn fx:id="idDrugName" prefWidth="119.20000648498535" text="Drug Name" />
+          <TableColumn fx:id="idDrugType" prefWidth="88.79998779296875" text="Type" />
+            <TableColumn fx:id="idDrugPrice" prefWidth="67.99998474121094" text="Price" />
+            <TableColumn fx:id="idDrugDesc" prefWidth="173.5999755859375" text="Description" />
+        </columns>
+      </TableView>
+      <Separator layoutX="482.0" layoutY="129.0" orientation="VERTICAL" prefHeight="382.0" prefWidth="0.0" style="-fx-background-color: #ff751a;" />
+      <Pane layoutX="514.0" layoutY="129.0" prefHeight="382.0" prefWidth="294.0" style="-fx-background-color: #ff751a;">
+         <children>
+            <TextField fx:id="priceMin" layoutX="14.0" layoutY="122.0" prefHeight="26.0" prefWidth="82.0" promptText="Min" />
+            <TextField fx:id="priceMax" layoutX="209.0" layoutY="122.0" prefHeight="26.0" prefWidth="72.0" promptText="Max" />
+            <Label layoutX="137.0" layoutY="127.0" prefHeight="17.0" prefWidth="46.0" style="-fx-font-weight: bold;" text="And" />
+            <ImageView fx:id="buyBtn" fitHeight="72.0" fitWidth="111.0" layoutX="111.0" layoutY="277.0" onMouseClicked="#buyItems" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@cart.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="31.0" layoutY="56.0" prefHeight="27.0" prefWidth="178.0" style="-fx-font-weight: bold;" text="Filter by price" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="61.0" layoutY="220.0" prefHeight="27.0" prefWidth="212.0" style="-fx-font-weight: bold;" text="Buy selected drug" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <ImageView fx:id="searchPriceBtn" fitHeight="40.0" fitWidth="34.0" onMouseClicked="#showFilteredDrugs" layoutX="188.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@search2.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fitHeight="59.0" fitWidth="200.0" layoutX="185.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
